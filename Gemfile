@@ -32,6 +32,7 @@ gem 'devise'
 
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'country_select', '~> 3.1', '>= 3.1.1'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass', '~> 5.6.1'

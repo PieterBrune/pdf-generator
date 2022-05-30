@@ -1,6 +1,9 @@
 class Invoice < ApplicationRecord
   belongs_to :user
   has_many :invoice_items, dependent: :destroy
+  accepts_nested_attributes_for :invoice_items, reject_if: proc { |attributes| attributes["name"].blank? || attributes["description"].blank? || attributes["price"].blank? || attributes["qty"].blank? }
+
+  STATUSES = ["draft", "sent", "paid"]
 
   STATUS_CLASS = {
       :draft => "badge badge-secondary",

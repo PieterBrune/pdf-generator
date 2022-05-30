@@ -1,0 +1,21 @@
+<div class="container mt-3">
+  <h2>Create a new invoice</h2>
+
+  <%= simple_form_for(@invoice) do |f| %>
+    <%= f.input :to_full_name, required: true %>
+    <%= f.input :to_address, required: true %>
+    <%= f.input :to_phone, required: true %>
+    <%= f.input :status, collection: Invoice::STATUSES, required: true %>
+    <%= f.input :discount, required: true %>
+    <%= f.input :vat, required: true %>
+    <%= f.simple_fields_for :invoice_items do |invoice_items_form| %>
+      <%= invoice_items_form.input :name, required: true %>
+      <%= invoice_items_form.input :description, required: true %>
+      <%= invoice_items_form.input :price, required: true %>
+      <%= invoice_items_form.input :qty, required: true %>
+    <% end %>
+    <div class="form-actions">
+      <%= f.button :submit, "Create", class: "login" %>
+    </div>
+  <% end %>
+</div>

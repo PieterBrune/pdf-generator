@@ -25,7 +25,7 @@
             <td><%= invoice.discount %></td>
             <td><%= invoice.vat %></td>
             <td><%= number_to_currency(invoice.total) %></td>
-            <td><%= link_to 'View', invoice_path(invoice) %></td>
+            <td><%= link_to 'View', invoice_path(invoice), id: "view-link" %></td>
           </tr>
         <% end %>
       <% else %>

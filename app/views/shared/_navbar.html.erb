@@ -14,8 +14,8 @@
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
+          <%= link_to 'Invoices', invoices_path, class: "btn btn-outline-secondary mx-2" %>
           <% if action_name.to_sym == :show %>
-            <%= link_to 'Back', invoices_path, class: "btn btn-outline-secondary mx-2" %>
             <%= link_to 'DOWNLOAD PDF', invoice_path(::Invoice.find(params[:id]), format: :pdf), class: "btn btn-outline-success my-2 my-sm-0" %>
           <% end %>
           <li class="nav-item dropdown">
